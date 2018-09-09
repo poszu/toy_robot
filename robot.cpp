@@ -10,15 +10,15 @@ Robot::Robot(int x_pos, int y_pos, Direction direction)
 
 void Robot::turn_left()
 {
-    direction_ = (direction_ + 1) % MAX_DIRECTION;
+    direction_ = (direction_ - 1) % MAX_DIRECTION;
 }
 
 void Robot::turn_right()
 {
-    direction_ = (direction_ - 1) % MAX_DIRECTION;
+    direction_ = (direction_ + 1) % MAX_DIRECTION;
 }
 
-void calculate_next_pos(int* x, int* y)
+void Robot::calculate_next_pos(int* x, int* y) const
 {
     switch (direction_) {
         case NORTH:

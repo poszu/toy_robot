@@ -1,4 +1,4 @@
-OBJS =  main.o robot.o
+OBJS =  main.o robot.o simulation.o
 CFLAGS = -Wall -g
 CPP = g++
 

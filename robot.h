@@ -1,3 +1,6 @@
+#ifndef ROBOT_H_
+#define ROBOT_H_
+
 enum Direction
 {
     NORTH = 0,
@@ -15,8 +18,11 @@ public:
     void turn_right();
     void move();
 
-    void calculate_next_pos(int* x, int* y);
+    void calculate_next_pos(int* x, int* y) const;
 
+    int get_x() const { return x_pos_; }
+    int get_y() const { return y_pos_; }
+    Direction get_dir() const { return Direction(direction_); }
 
 private:
     Robot();
@@ -24,3 +30,5 @@ private:
     int y_pos_;
     unsigned int direction_;
 };
+
+#endif // #ifndef ROBOT_H_
